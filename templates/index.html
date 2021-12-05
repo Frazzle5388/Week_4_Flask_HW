@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for item in items %}
+
+<div>
+    <h2>{{item.name}}</h2>
+    <ul>
+        <li>{{item.price}}</li>
+        <li>{{item.quantity}}</li>
+        <li>{{item.bought}}</li>
+    </ul>
+</div>
+
+{% endfor %}
+
+<form action="/items" method="post">
+    <label for="title">Item Name</label>
+    <input type="text" name="title" id="">
+    <br>
+    <label for="title">Item Price</label>
+    <input type="text" name="price" id="">
+    <br>
+    <label for="title">Item Quantity</label>
+    <input type="text" name="quantity" id="">
+    <br>
+    <label for="title">Item Bought?</label>
+    <input type="text" name="bought" id="">
+    <br>
+    <input type="submit" value="Add Event" id="">  
+</form> 
+{% endblock  %}
